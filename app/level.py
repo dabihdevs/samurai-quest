@@ -24,11 +24,11 @@ class Level:
         
         layouts = {
             'boundary': import_csv_layout('../data/map_layers/map_floorblocks.csv'),
-            'objects' : import_csv_layout('../data/map_layers/map_objects.csv')
+            'object' : import_csv_layout('../data/map_layers/map_objects.csv')
         }
 
         graphics = {
-            'objects' : import_folder('../graphics/objects')
+            'object' : import_folder('../graphics/objects')
         }
 
         for style, layout in layouts.items():
@@ -40,8 +40,8 @@ class Level:
                 
                         if style == 'boundary':
                             Tile((x,y), [self.obstacle_sprites], 'invisible')
-                        if style == 'objects':
-                            surf = graphics['objects'][int(col)]
+                        if style == 'object':
+                            surf = graphics['object'][int(col)]
                             Tile((x,y), [self.visible_sprites, self.obstacle_sprites], 'object', surface=surf)
                     
         self.player = Player((384,2432), [self.visible_sprites], self.obstacle_sprites)

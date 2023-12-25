@@ -1,8 +1,20 @@
 import pygame
 from settings import *
+from support import import_folder
 
 # Define Player class posessing an image and a position in the map
 class Player(pygame.sprite.Sprite):
+
+    # Import player assets
+    def import_player_assets(self):
+        character_path = "../graphics/player"
+        self.animations = {'up': [], 'down': [], 'left': [], 'right': [],
+                           'right_idle': [], 'left_idle': [], 'up_idle': [], 'down_idle': [],
+                           'right_attack': [], 'left_attack': [], 'up_attack': [], 'down_attack': []}
+        
+        for animation in self.animations.keys():
+            full_path = character_path + animation
+            self.animations[animation] = import_folder(full_path)
     
     # Initialize Player
     def __init__(self, pos, groups, obstacle_sprites):
@@ -11,8 +23,15 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(topleft=pos) # assign space (a rectangle) to player
         self.hitbox = self.rect.inflate(0, -26) # define hitbox (makes player rectangle partly overlappable)
 
+        # Graphics setup
+        self.import_player_assets()
+
+        # Movement
         self.direction = pygame.math.Vector2() # initialize 2x1 vector indicating direction
         self.speed = 5 # initialize movement speed
+        self.attacking = False
+        self.attack_cooldown = 400 # ms it takes before attacking again
+        self.attack_time = None
         
         self.obstacle_sprites = obstacle_sprites
         
@@ -38,6 +57,18 @@ class Player(pygame.sprite.Sprite):
             self.direction.x = -1
         else:
             self.direction.x = 0
+
+        # Attack input
+        if keys[pygame.K_SPACE] and not self.attacking:
+            self.attacking = True
+            self.attack_time = pygame.time.get_ticks()
+            print('attack')
+            
+        # Magic input
+        if keys[pygame.K_LCTRL] and not self.attacking:
+            self.attacking = True
+            self.attack_time = pygame.time.get_ticks()
+            print('magic')
     
     # Movement action
     def move(self, speed):
@@ -74,8 +105,17 @@ class Player(pygame.sprite.Sprite):
                     elif self.direction.y < 0: # moving downwards
                         self.hitbox.top = sprite.hitbox.bottom
     
+    # Cooldown times
+    def cooldowns(self):
+        current_time = pygame.time.get_ticks()
+
+        if self.attacking:
+            if current_time - self.attack_time >= self.attack_cooldown:
+                self.attacking = False
+
     # Update player
     def update(self):
         self.input() # get and store keyboard input
+        self.cooldowns() # set timer and cooldowns
         self.move(self.speed) # move player based on stored input
         

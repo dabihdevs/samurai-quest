@@ -4,7 +4,7 @@ from level import Level
 
 # Define game!
 class Game:
-    def __init__(self):
+    def __init__(self): 
     
         # Initialize pygame
         pygame.init()
