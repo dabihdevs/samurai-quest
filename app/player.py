@@ -7,24 +7,28 @@ class Player(pygame.sprite.Sprite):
 
     # Import player assets
     def import_player_assets(self):
-        character_path = "../graphics/player"
+        character_path = "../graphics/player/"
         self.animations = {'up': [], 'down': [], 'left': [], 'right': [],
                            'right_idle': [], 'left_idle': [], 'up_idle': [], 'down_idle': [],
                            'right_attack': [], 'left_attack': [], 'up_attack': [], 'down_attack': []}
         
         for animation in self.animations.keys():
             full_path = character_path + animation
-            self.animations[animation] = import_folder(full_path)
+            self.animations[animation] = import_folder(full_path, scale=(64, 64))
+
     
     # Initialize Player
     def __init__(self, pos, groups, obstacle_sprites):
         super().__init__(groups)
-        self.image = pygame.image.load('../graphics/player.png').convert_alpha() # assign image to player
+        self.image = pygame.image.load('../graphics/player/down_idle/down_idle.png').convert_alpha() # assign image to player
         self.rect = self.image.get_rect(topleft=pos) # assign space (a rectangle) to player
         self.hitbox = self.rect.inflate(0, -26) # define hitbox (makes player rectangle partly overlappable)
 
         # Graphics setup
         self.import_player_assets()
+        self.status = 'down'
+        self.frame_index = 400
+        self.animation_speed = 0.15
 
         # Movement
         self.direction = pygame.math.Vector2() # initialize 2x1 vector indicating direction
@@ -45,16 +49,20 @@ class Player(pygame.sprite.Sprite):
         # Along y axis
         if keys[pygame.K_UP]:
             self.direction.y = -1
+            self.status = 'up'
         elif keys[pygame.K_DOWN]:
             self.direction.y = 1
+            self.status = 'down'
         else:
             self.direction.y = 0
         
         # Along x axis            
         if keys[pygame.K_RIGHT]:
             self.direction.x = 1
+            self.status = 'right'
         elif keys[pygame.K_LEFT]:
             self.direction.x = -1
+            self.status = 'left'
         else:
             self.direction.x = 0
 
@@ -70,6 +78,27 @@ class Player(pygame.sprite.Sprite):
             self.attack_time = pygame.time.get_ticks()
             print('magic')
     
+    # Get status
+    def get_status(self):
+
+        # Idle
+        if self.direction.x == 0 and self.direction.y == 0:
+            if not 'idle' in self.status and not 'attack' in self.status:
+                self.status = self.status + '_idle'
+
+        # Attacking
+        if self.attacking:
+            self.direction.x = 0
+            self.direction.y = 0
+            if not 'attack' in self.status:
+                if 'idle' in self.status:
+                    self.status = self.status.replace('_idle', '_attack')
+                else:
+                    self.status = self.status + '_attack'
+            else:
+                if 'attack' in self.status:
+                    self.status = self.status.replace('_attack', '')
+
     # Movement action
     def move(self, speed):
     
@@ -113,9 +142,24 @@ class Player(pygame.sprite.Sprite):
             if current_time - self.attack_time >= self.attack_cooldown:
                 self.attacking = False
 
+    # Animate the player image
+    def animate(self):
+        animation = self.animations[self.status]
+
+        # Loop over the frame index
+        self.frame_index += self.animation_speed
+        if self.frame_index >= len(animation):
+            self.frame_index = 0
+
+        # Set the image
+        self.image = animation[int(self.frame_index)]
+        self.rect = self.image.get_rect(center=self.hitbox.center)
+
     # Update player
     def update(self):
         self.input() # get and store keyboard input
         self.cooldowns() # set timer and cooldowns
+        self.get_status() # get player status
+        self.animate() # set player animation
         self.move(self.speed) # move player based on stored input
         
