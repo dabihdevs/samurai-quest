@@ -7,10 +7,6 @@ I'm using the pygame package and the map-creator software Tiled. The tileset I u
 
 
 ** Recent fixes: **
-- corrected offset of trees
-- added functions to read attack and magic inputs
-- about to introduce player states in the game
-
-** Current problems: **
-- sometimes when colliding the main character changes position on the map
-- the attack animation doesn't seem to work well
+- player doesn't glitch anymore when colliding with objects
+- player does not enter in water anymore
+- attack/magic animations work good now
