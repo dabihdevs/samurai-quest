@@ -14,4 +14,7 @@ class Tile(pygame.sprite.Sprite):
         else:
             self.rect = self.image.get_rect(topleft=pos) # assign space (a rectangle) to tile
 
-        self.hitbox = self.rect.inflate(0, -10) # define hitbox (makes tile rectangle partly overlappable)
+        if sprite_type == 'invisible':
+            self.hitbox = self.rect # no overlapping
+        else:
+            self.hitbox = self.rect.inflate(0, -10) # define hitbox (makes tile rectangle partly overlappable)

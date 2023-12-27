@@ -22,12 +22,12 @@ class Player(pygame.sprite.Sprite):
         super().__init__(groups)
         self.image = pygame.image.load('../graphics/player/down_idle/down_idle.png').convert_alpha() # assign image to player
         self.rect = self.image.get_rect(topleft=pos) # assign space (a rectangle) to player
-        self.hitbox = self.rect.inflate(0, -26) # define hitbox (makes player rectangle partly overlappable)
+        self.hitbox = self.rect.inflate(0, -10) # define hitbox (makes player rectangle partly overlappable)
 
         # Graphics setup
         self.import_player_assets()
         self.status = 'down'
-        self.frame_index = 400
+        self.frame_index = 0
         self.animation_speed = 0.15
 
         # Movement
@@ -41,42 +41,42 @@ class Player(pygame.sprite.Sprite):
         
     # Input from the keyboard
     def input(self):
-        
-        # Store pressed key
-        keys = pygame.key.get_pressed()
-        
-        # Assign direction vector to the 4 directional keys:
-        # Along y axis
-        if keys[pygame.K_UP]:
-            self.direction.y = -1
-            self.status = 'up'
-        elif keys[pygame.K_DOWN]:
-            self.direction.y = 1
-            self.status = 'down'
-        else:
-            self.direction.y = 0
-        
-        # Along x axis            
-        if keys[pygame.K_RIGHT]:
-            self.direction.x = 1
-            self.status = 'right'
-        elif keys[pygame.K_LEFT]:
-            self.direction.x = -1
-            self.status = 'left'
-        else:
-            self.direction.x = 0
-
-        # Attack input
-        if keys[pygame.K_SPACE] and not self.attacking:
-            self.attacking = True
-            self.attack_time = pygame.time.get_ticks()
-            print('attack')
+        if not self.attacking:        
+            # Store pressed key
+            keys = pygame.key.get_pressed()
             
-        # Magic input
-        if keys[pygame.K_LCTRL] and not self.attacking:
-            self.attacking = True
-            self.attack_time = pygame.time.get_ticks()
-            print('magic')
+            # Assign direction vector to the 4 directional keys:
+            # Along y axis
+            if keys[pygame.K_UP]:
+                self.direction.y = -1
+                self.status = 'up'
+            elif keys[pygame.K_DOWN]:
+                self.direction.y = 1
+                self.status = 'down'
+            else:
+                self.direction.y = 0
+            
+            # Along x axis            
+            if keys[pygame.K_RIGHT]:
+                self.direction.x = 1
+                self.status = 'right'
+            elif keys[pygame.K_LEFT]:
+                self.direction.x = -1
+                self.status = 'left'
+            else:
+                self.direction.x = 0
+
+            # Attack input
+            if keys[pygame.K_SPACE]:
+                self.attacking = True
+                self.attack_time = pygame.time.get_ticks()
+                print('attack')
+                
+            # Magic input
+            if keys[pygame.K_LCTRL]:
+                self.attacking = True
+                self.attack_time = pygame.time.get_ticks()
+                print('magic')
     
     # Get status
     def get_status(self):
@@ -95,9 +95,9 @@ class Player(pygame.sprite.Sprite):
                     self.status = self.status.replace('_idle', '_attack')
                 else:
                     self.status = self.status + '_attack'
-            else:
-                if 'attack' in self.status:
-                    self.status = self.status.replace('_attack', '')
+        else:
+            if 'attack' in self.status:
+                self.status = self.status.replace('_attack', '')
 
     # Movement action
     def move(self, speed):
