@@ -18,7 +18,7 @@ class Player(pygame.sprite.Sprite):
 
     
     # Initialize Player
-    def __init__(self, pos, groups, obstacle_sprites):
+    def __init__(self, pos, groups, obstacle_sprites, create_attack, destroy_attack):
         super().__init__(groups)
         self.image = pygame.image.load('../graphics/player/down_idle/down_idle.png').convert_alpha() # assign image to player
         self.rect = self.image.get_rect(topleft=pos) # assign space (a rectangle) to player
@@ -38,7 +38,13 @@ class Player(pygame.sprite.Sprite):
         self.attack_time = None
         
         self.obstacle_sprites = obstacle_sprites
-        
+
+        # Weapon
+        self.create_attack = create_attack
+        self.destroy_attack = destroy_attack
+        self.weapon_index = 0
+        self.weapon = list(weapon_data.keys())[self.weapon_index]
+
     # Input from the keyboard
     def input(self):
         if not self.attacking:        
@@ -70,7 +76,7 @@ class Player(pygame.sprite.Sprite):
             if keys[pygame.K_SPACE]:
                 self.attacking = True
                 self.attack_time = pygame.time.get_ticks()
-                print('attack')
+                self.create_attack()
                 
             # Magic input
             if keys[pygame.K_LCTRL]:
@@ -141,6 +147,7 @@ class Player(pygame.sprite.Sprite):
         if self.attacking:
             if current_time - self.attack_time >= self.attack_cooldown:
                 self.attacking = False
+                self.destroy_attack()
 
     # Animate the player image
     def animate(self):

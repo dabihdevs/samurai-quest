@@ -6,7 +6,6 @@ At current stage the game shows a player-icon moving through a terrain map with 
 I'm using the pygame package and the map-creator software Tiled. The tileset I used is NinjaAdventure from Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack
 
 
-** Recent fixes: **
-- player doesn't glitch anymore when colliding with objects
-- player does not enter in water anymore
-- attack/magic animations work good now
+** Last update: **
+- added weapons graphics (although for now only Katana is used)
+- added weapon to player
