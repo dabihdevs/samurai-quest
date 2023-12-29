@@ -7,5 +7,5 @@ I'm using the pygame package and the map-creator software Tiled. The tileset I u
 
 
 ** Last update: **
-- added weapons graphics (although for now only Katana is used)
-- added weapon to player
+- added further weapon
+- added ability to switch weapon
