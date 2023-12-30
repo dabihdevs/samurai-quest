@@ -1,11 +1,13 @@
 # samurai-quest
 A simple Zelda-like RPG game created using the pygame package.
 
-At current stage the game shows a player-icon moving through a terrain map with collideable trees and rocks. The player cannot leave the map or step into the water. The camera follows the player-icon.
+At current stage the game shows:
+- A terrain map
+- collideable objects and boundaries (the player cannot leave the map or step into water)
+- a player icon which is animated during actions
+- the player is able to attack
+- the player can switch between 2 weapons (katana and lance)
+- health and energy bar appears on top left of the screen (black bars for now)
+- the player posesses game statistics
 
-I'm using the pygame package and the map-creator software Tiled. The tileset I used is NinjaAdventure from Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack
-
-
-** Last update: **
-- added further weapon
-- added ability to switch weapon
+I'm using the pygame package and the map-creator software Tiled. The tileset, characters and fonts I used I've taken from NinjaAdventure by Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack
