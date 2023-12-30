@@ -4,6 +4,7 @@ from tile import Tile
 from player import Player
 from support import *
 from weapon import Weapon
+from ui import UI
 
 class Level:
 
@@ -22,6 +23,9 @@ class Level:
 
         # Sprite setup
         self.create_map()
+
+        # User interface
+        self.ui = UI()
     
     # Create map
     def create_map(self):
@@ -64,6 +68,7 @@ class Level:
     def run(self):
         self.visible_sprites.custom_draw(self.player)
         self.visible_sprites.update()
+        self.ui.display(self.player)
 
 # Create camera following the player       
 class YSortCameraGroup(pygame.sprite.Group):
