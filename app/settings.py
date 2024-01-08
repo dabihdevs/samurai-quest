@@ -25,3 +25,9 @@ UI_BORDER_COLOR_ACTIVE = 'gold'
 # Weapons
 weapon_data = {'Katana': {'cooldown': 100, 'damage': 15, 'graphic': '../graphics/weapons/Katana/full.png'},
                'Lance': {'cooldown': 120, 'damage': 20, 'graphic': '../graphics/weapons/Lance/full.png'}}
+
+# Magic
+magic_data = {
+    'thunder': {'strength': 5, 'cost': 20, 'graphic':'../graphics/particles/thunder_full.png'},
+    'heal': {'strength': 20, 'cost': 10, 'graphic':'../graphics/particles/heal_full.png'}
+}

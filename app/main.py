@@ -9,7 +9,7 @@ class Game:
         # Initialize pygame
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT)) # set up space
-        pygame.display.set_caption('Hypatia')
+        pygame.display.set_caption('Samurai Quest')
         self.clock = pygame.time.Clock() # set up time (clock)
         self.level = Level() # set up level
         
