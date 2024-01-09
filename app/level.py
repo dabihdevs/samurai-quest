@@ -31,8 +31,9 @@ class Level:
     def create_map(self):
         
         layouts = {
-            'boundary': import_csv_layout('../data/map_layers/map_floorblocks.csv'),
-            'object' : import_csv_layout('../data/map_layers/map_objects.csv')
+            'boundary' : import_csv_layout('../data/map_layers/map_floorblocks.csv'),
+            'object' : import_csv_layout('../data/map_layers/map_objects.csv'),
+            #'entities' : import_csv_layout('../data/map_layers/map_enemies.csv') 
         }
 
         graphics = {

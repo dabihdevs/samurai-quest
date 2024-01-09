@@ -13,4 +13,8 @@ At current stage the game shows:
 - XPs appear on the bottom right of the screen
 - the player posesses game statistics
 
+## Recent update
+- added entity class from which both Player and Enemy class inherit the functions move() and collision()
+- created Enemy class
+
 I'm using the pygame package and the map-creator software Tiled. The tileset, characters and fonts I used I've taken from NinjaAdventure by Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack

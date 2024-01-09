@@ -31,3 +31,11 @@ magic_data = {
     'thunder': {'strength': 5, 'cost': 20, 'graphic':'../graphics/particles/thunder_full.png'},
     'heal': {'strength': 20, 'cost': 10, 'graphic':'../graphics/particles/heal_full.png'}
 }
+
+# Monsters
+monster_data = {
+    'beast': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100},
+    'ghost': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100},
+    'cyclope': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100},
+    'reptile': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100}
+}
