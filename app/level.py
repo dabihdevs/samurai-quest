@@ -5,6 +5,7 @@ from player import Player
 from support import *
 from weapon import Weapon
 from ui import UI
+from enemy import Enemy
 
 class Level:
 
@@ -33,7 +34,7 @@ class Level:
         layouts = {
             'boundary' : import_csv_layout('../data/map_layers/map_floorblocks.csv'),
             'object' : import_csv_layout('../data/map_layers/map_objects.csv'),
-            #'entities' : import_csv_layout('../data/map_layers/map_enemies.csv') 
+            'entities' : import_csv_layout('../data/map_layers/map_entities.csv') 
         }
 
         graphics = {
@@ -52,14 +53,21 @@ class Level:
                         if style == 'object':
                             surf = graphics['object'][int(col)]
                             Tile((x,y), [self.visible_sprites, self.obstacle_sprites], 'object', surface=surf)
-                    
-        self.player = Player(
-            (384,2432),
-            [self.visible_sprites],
-            self.obstacle_sprites,
-            self.create_attack,
-            self.destroy_attack,
-            self.create_magic)
+                        if style == 'entities':
+                            if col == "4":
+                                self.player = Player(
+                                    (x, y),
+                                    [self.visible_sprites],
+                                    self.obstacle_sprites,
+                                    self.create_attack,
+                                    self.destroy_attack,
+                                    self.create_magic)
+                            else:
+                                if col == "0": monster_name = 'Beast'
+                                elif col == "1": monster_name = 'Cyclope'
+                                elif col == "2": monster_name = 'Ghost'
+                                else: monster_name = 'Reptile'
+                                Enemy(monster_name, (x,y), [self.visible_sprites])
     
     # Create attack
     def create_attack(self):

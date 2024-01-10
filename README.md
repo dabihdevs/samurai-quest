@@ -16,5 +16,6 @@ At current stage the game shows:
 ## Recent update
 - added entity class from which both Player and Enemy class inherit the functions move() and collision()
 - created Enemy class
+- now the enemies are displayed on the terrain, but are not collideable yet
 
 I'm using the pygame package and the map-creator software Tiled. The tileset, characters and fonts I used I've taken from NinjaAdventure by Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack
