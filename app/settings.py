@@ -34,8 +34,8 @@ magic_data = {
 
 # Monsters
 monster_data = {
-    'beast': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100},
-    'ghost': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100},
-    'cyclope': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100},
-    'reptile': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100}
+    'Beast': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100},
+    'Ghost': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100},
+    'Cyclope': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100},
+    'Reptile': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 80, 'notice_radius': 100}
 }
