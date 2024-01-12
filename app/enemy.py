@@ -39,6 +39,10 @@ class Enemy(Entity):
             self.animations[animation] = import_folder(main_path + animation, scale=(64,64))
 
     def get_player_distance_direction(self, player):
+        """
+        Returns the current distance (number) between the enemy and the player, plus the direction
+        (2D vector) along which the enemy has to move to reach the player.
+        """
         enemy_vec = pygame.math.Vector2(self.rect.center)
         player_vec = pygame.math.Vector2(player.rect.center)
         distance = (player_vec - enemy_vec).magnitude()
@@ -50,6 +54,11 @@ class Enemy(Entity):
         return (distance, direction)
 
     def get_status(self, player):
+        """
+        Updates the enemy status based on its distance to the player. The enemy status is updated
+        to 'attack' if player is within the enemy's attack radius. It is updated to 'move' if
+        the player is whitin the enemy's notice radius. Otherwise the enemy's status is 'idle'.
+        """
         distance = self.get_player_distance_direction(player)[0]
 
         if distance <= self.attack_radius:
@@ -60,10 +69,14 @@ class Enemy(Entity):
             self.status = 'idle'
 
     def actions(self, player):
+        """
+        Updates the direction which the enemy faces and along which it moves based on the distance
+        to the player.
+        """
         if self.status == 'attack':
             print('attack')
         elif self.status == 'move':
-            pass
+            self.direction = self.get_player_distance_direction(player)[1]
         else:
             self.direction = pygame.math.Vector2()
 
@@ -72,5 +85,6 @@ class Enemy(Entity):
         self.move(self.speed)
 
     def enemy_update(self, player):
-        pass
+        self.get_status(player)
+        self.actions(player)
         

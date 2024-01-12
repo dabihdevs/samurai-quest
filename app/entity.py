@@ -13,7 +13,7 @@ class Entity(pygame.sprite.Sprite):
         if self.direction.magnitude() != 0:
             self.direction = self.direction.normalize()
             
-        # Update player position based on input
+        # Update entity position based on input
         self.hitbox.x += self.direction.x * speed
         self.collision('horizontal')
         self.hitbox.y += self.direction.y * speed
