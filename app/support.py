@@ -13,6 +13,10 @@ def import_csv_layout(path):
     
 
 def import_folder(path, scale=(128, 128)):
+    """
+    Returns list of surfaces, one for each image inside the input path. The scale factor
+    can be used to scale the surface, default is (128, 128) pixels.
+    """
     surface_list = []
 
     for _,__,img_files in walk(path):
