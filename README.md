@@ -13,10 +13,11 @@ At current stage the game shows:
 - XPs appear on the bottom right of the screen
 - the player posesses game statistics
 
-## Recent update
+## Recent updates
 - added entity class from which both Player and Enemy class inherit the functions move() and collision()
 - created Enemy class
 - now the enemies are displayed on the terrain and move towards the player when the player comes within their notice radius; they are animated but not collideable yet
 - the program crushes when enemies attack because attack animation is not available yet
+- when the player's weapon collides with the enemies, the enemies disappear
 
 I'm using the pygame package and the map-creator software Tiled. The tileset, characters and fonts I used I've taken from NinjaAdventure by Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack

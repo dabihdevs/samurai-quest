@@ -21,6 +21,9 @@ class Level:
         
         # Attack sprites
         self.current_attack = None
+        self.attack_sprites = pygame.sprite.Group() # particles
+        self.attackable_sprites = pygame.sprite.Group() # enemies
+
 
         # Sprite setup
         self.create_map()
@@ -67,11 +70,15 @@ class Level:
                                 elif col == "1": monster_name = 'Cyclope'
                                 elif col == "2": monster_name = 'Ghost'
                                 else: monster_name = 'Reptile'
-                                Enemy(monster_name, (x,y), [self.visible_sprites], self.obstacle_sprites)
+                                Enemy(monster_name,
+                                      (x,y),
+                                      [self.visible_sprites, self.attackable_sprites],
+                                      self.obstacle_sprites)
     
     # Create attack
     def create_attack(self):
-        self.current_attack = Weapon(self.player, [self.visible_sprites])
+        self.current_attack = Weapon(self.player, [self.visible_sprites, self.attack_sprites])
+
 
     def create_magic(self, style, strength, cost):
         print(style)
@@ -83,12 +90,20 @@ class Level:
             self.current_attack.kill()
         self.current_attack = None
 
+    def player_attack_logic(self):
+        if self.attack_sprites:
+            for attack_sprite in self.attack_sprites:
+                collision_sprites = pygame.sprite.spritecollide(attack_sprite, self.attackable_sprites, False)
+                if collision_sprites:
+                    for target_sprite in collision_sprites:
+                        target_sprite.kill()
 
     # Update and draw the game
     def run(self):
         self.visible_sprites.custom_draw(self.player)
         self.visible_sprites.update()
         self.visible_sprites.enemy_update(self.player)
+        self.player_attack_logic()
         self.ui.display(self.player)
 
 # Create camera following the player       
