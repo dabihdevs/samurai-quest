@@ -59,6 +59,11 @@ class Player(Entity):
         self.exp = 123 # XPs
         self.speed = self.stats['speed']
 
+        # Damage timer
+        self.vulnerable = True
+        self.hurt_time = None
+        self.invincibility_duration = 500
+
     # Input from the keyboard
     def input(self):
         if not self.attacking:        
@@ -166,6 +171,10 @@ class Player(Entity):
             if current_time - self.magic_switch_time >= self.switch_duration_cooldown:
                 self.can_switch_magic = True
 
+        if not self.vulnerable:
+            if current_time - self.hurt_time >= self.invincibility_duration:
+                self.vulnerable = True
+
     # Animate the player image
     def animate(self):
         animation = self.animations[self.status]
@@ -178,6 +187,14 @@ class Player(Entity):
         # Set the image
         self.image = animation[int(self.frame_index)]
         self.rect = self.image.get_rect(center=self.hitbox.center)
+
+        # Flicker when hit
+        if not self.vulnerable:
+            alpha = self.wave_value()
+            self.image.set_alpha(alpha)
+        else:
+            self.image.set_alpha(255)
+
 
     def get_full_weapon_damage(self):
         base_damage = self.stats['attack']
