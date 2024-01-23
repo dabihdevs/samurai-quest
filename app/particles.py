@@ -3,7 +3,19 @@ from support import import_folder
 
 class AnimationPlayer:
     def __init__(self):
-        pass
+        self.frames = {
+            # Attack
+            'cut': import_folder("../graphics/particles/cut"),
+            'claw': import_folder("../graphics/particles/claw"),
+            'slash': import_folder("../graphics/particles/slash"),
+
+            # Magic
+            'thunder': import_folder("../graphics/particles/thunder/frames", scale=(20,28)),
+            'heal': import_folder("../graphics/particles/heal/frames"),
+
+            # Monster deaths
+            'smoke': import_folder("../graphics/particles/smoke")
+        }
 
 class ParticleEffect(pygame.sprite.Sprite):
     def __init__(self, pos, animation_frames, groups):

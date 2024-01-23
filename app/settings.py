@@ -28,8 +28,8 @@ weapon_data = {'Katana': {'cooldown': 100, 'damage': 15, 'graphic': '../graphics
 
 # Magic
 magic_data = {
-    'thunder': {'strength': 5, 'cost': 20, 'graphic':'../graphics/particles/thunder_full.png'},
-    'heal': {'strength': 20, 'cost': 10, 'graphic':'../graphics/particles/heal_full.png'}
+    'thunder': {'strength': 5, 'cost': 20, 'graphic':'../graphics/particles/thunder/thunder_full.png'},
+    'heal': {'strength': 20, 'cost': 10, 'graphic':'../graphics/particles/heal/heal_full.png'}
 }
 
 # Monsters
