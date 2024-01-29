@@ -13,8 +13,8 @@ At current stage the game shows:
 - XPs appear on the bottom right of the screen
 - the player posesses game statistics
 - the player can inflict damages to enemies and get damaged by enemies
-- the enemies move towards the player when he enters their notice radius, and attack him when he enters their attack radius
+- the enemies move towards the player when he enters their notice radius, and attack him when he enters their attack radius; when they attack an attack animation ensues
 - the player and the enemies flicker when hit
-- the enemy vanishes when its health goes to 0
+- the enemy vanishes in smoke when its health goes to 0
 
 I'm using the pygame package and the map-creator software Tiled. The tileset, characters and fonts I used I've taken from NinjaAdventure by Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack
