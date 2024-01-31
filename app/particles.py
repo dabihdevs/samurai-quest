@@ -11,7 +11,8 @@ class AnimationPlayer:
 
             # Magic
             'thunder': import_folder("../graphics/particles/thunder/frames", scale=(20,28)),
-            'heal': import_folder("../graphics/particles/heal/frames", scale=(20,28)),
+            'heal': import_folder("../graphics/particles/heal/frames", scale=(40,56)),
+            'aura': import_folder("../graphics/particles/aura/frames"),
 
             # Monster deaths
             'smoke': import_folder("../graphics/particles/smoke/frames")

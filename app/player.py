@@ -201,6 +201,12 @@ class Player(Entity):
         weapon_damage = weapon_data[self.weapon]['damage']
         return base_damage + weapon_damage
 
+    def energy_recovery(self):
+        if self.energy < self.stats['energy']:
+            self.energy += 0.01 * self.stats['magic']
+        else:
+            self.energy = self.stats['energy']
+
     # Update player
     def update(self):
         self.input() # get and store keyboard input
@@ -208,4 +214,5 @@ class Player(Entity):
         self.get_status() # get player status
         self.animate() # set player animation
         self.move(self.speed) # move player based on stored input
+        self.energy_recovery()
         
