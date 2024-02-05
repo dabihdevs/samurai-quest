@@ -93,8 +93,8 @@ class Level:
         if style == 'heal':
             self.magic_player.heal(self.player, strength, cost, [self.visible_sprites])
 
-        if style == 'thunder':
-            pass
+        if style == 'shuriken':
+            self.magic_player.shuriken(self.player, cost, [self.visible_sprites])
 
     def destroy_attack(self):
         if self.current_attack:

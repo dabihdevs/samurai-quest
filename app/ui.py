@@ -24,7 +24,7 @@ class UI:
             self.magic_graphics = []
             for magic in magic_data.values():
                 magic = pygame.image.load(magic['graphic']).convert_alpha()
-                magic = pygame.transform.scale(magic, (30, 62))
+                magic = pygame.transform.scale(magic, (64, 64))
                 self.magic_graphics.append(magic)
         
 

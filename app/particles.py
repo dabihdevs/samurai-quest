@@ -10,7 +10,7 @@ class AnimationPlayer:
             'slash': import_folder("../graphics/particles/slash/frames"),
 
             # Magic
-            'thunder': import_folder("../graphics/particles/thunder/frames", scale=(20,28)),
+            'shuriken': import_folder("../graphics/particles/magic_shuriken/frames", scale=(64,64)),
             'heal': import_folder("../graphics/particles/heal/frames", scale=(40,56)),
             'aura': import_folder("../graphics/particles/aura/frames"),
 
