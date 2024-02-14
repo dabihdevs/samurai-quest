@@ -28,7 +28,7 @@ weapon_data = {'Katana': {'cooldown': 100, 'damage': 15, 'graphic': '../graphics
 
 # Magic
 magic_data = {
-    'shuriken': {'strength': 5, 'cost': 20, 'graphic':'../graphics/particles/magic_shuriken/frames/0.png'},
+    'shuriken': {'strength': 30, 'cost': 20, 'graphic':'../graphics/particles/magic_shuriken/frames/0.png'},
     'heal': {'strength': 20, 'cost': 10, 'graphic':'../graphics/particles/heal/heal_full.png'}
 }
 

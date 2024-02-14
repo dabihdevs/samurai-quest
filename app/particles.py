@@ -10,7 +10,7 @@ class AnimationPlayer:
             'slash': import_folder("../graphics/particles/slash/frames"),
 
             # Magic
-            'shuriken': import_folder("../graphics/particles/magic_shuriken/frames", scale=(64,64)),
+            'shuriken': import_folder("../graphics/particles/magic_shuriken/frames", scale=(32,32)),
             'heal': import_folder("../graphics/particles/heal/frames", scale=(40,56)),
             'aura': import_folder("../graphics/particles/aura/frames"),
 
@@ -34,6 +34,7 @@ class AnimationPlayer:
 class ParticleEffect(pygame.sprite.Sprite):
     def __init__(self, pos, animation_frames, groups):
         super().__init__(groups)
+        self.sprite_type = 'magic'
         self.frame_index = 0
         self.animation_speed = 0.15
         self.frames = animation_frames
