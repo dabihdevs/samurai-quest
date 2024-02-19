@@ -135,7 +135,7 @@ class Level:
         self.ui.display(self.player)
 
         if self.game_paused:
-            # display upgrade men
+            # display upgrade menu
             self.upgrade.display()
         else:
             self.visible_sprites.update()

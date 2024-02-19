@@ -22,6 +22,11 @@ HEALTH_COLOR = 'red'
 ENERGY_COLOR = 'blue'
 UI_BORDER_COLOR_ACTIVE = 'gold'
 
+# Upgrade menu
+TEXT_COLOR_SELECTED = '#111111'
+BAR_COLOR = '#EEEEEE'
+UPGRADE_BG_COLOR_SELECTED = '#EEEEEE'
+
 # Weapons
 weapon_data = {'Katana': {'cooldown': 100, 'damage': 15, 'graphic': '../graphics/weapons/Katana/full.png'},
                'Lance': {'cooldown': 120, 'damage': 20, 'graphic': '../graphics/weapons/Lance/full.png'}}

@@ -21,7 +21,8 @@ At current stage the game shows:
 - the player can cast a healing spell (with animation) that increases the health bar by consuming energy from the energy bar
 - the energy bar slowly recovers
 - added magic shuriken interacting with sprites (and consuming energy)
-- added first attempt at game menu (black screen for now), which pauses the game
+- added first attempt at game menu (black screen for now), which pauses the game and displays one grey block
+(to be improved)
 
 
 I'm using the pygame package and the map-creator software Tiled. The tileset, characters and fonts I used I've taken from NinjaAdventure by Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack
