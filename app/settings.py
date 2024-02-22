@@ -40,8 +40,8 @@ magic_data = {
 
 # Monsters
 monster_data = {
-    'Beast': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 50, 'notice_radius': 200},
-    'Ghost': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 50, 'notice_radius': 200},
-    'Cyclope': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 50, 'notice_radius': 200},
-    'Reptile': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "", 'speed': 2, 'resistance': 5, 'attack_radius': 50, 'notice_radius': 200}
+    'Beast': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "../sounds/Game/Explosion4.wav", 'speed': 2, 'resistance': 5, 'attack_radius': 50, 'notice_radius': 200},
+    'Ghost': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "../sounds/Game/Explosion4.wav", 'speed': 2, 'resistance': 5, 'attack_radius': 50, 'notice_radius': 200},
+    'Cyclope': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "../sounds/Game/Explosion4.wav", 'speed': 2, 'resistance': 5, 'attack_radius': 50, 'notice_radius': 200},
+    'Reptile': {'health': 200, 'exp':100, 'damage': 30, 'attack_type': 'claw', 'attack_sound': "../sounds/Game/Explosion4.wav", 'speed': 2, 'resistance': 5, 'attack_radius': 50, 'notice_radius': 200}
 }

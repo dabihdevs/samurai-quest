@@ -22,6 +22,7 @@ At current stage the game shows:
 - the energy bar slowly recovers
 - added magic shuriken interacting with sprites (and consuming energy)
 - added upgrade menu. here the player can update his/her stats by spending gained xps
+- added sound effects and music
 
 
 I'm using the pygame package and the map-creator software Tiled. The tileset, characters and fonts I used I've taken from NinjaAdventure by Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack

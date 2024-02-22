@@ -12,6 +12,11 @@ class Game:
         pygame.display.set_caption('Samurai Quest')
         self.clock = pygame.time.Clock() # set up time (clock)
         self.level = Level() # set up level
+
+        # Sound
+        main_sound = pygame.mixer.Sound('../sounds/main_theme.ogg')
+        main_sound.set_volume(0.5)
+        main_sound.play(loops = -1)
         
     # Define run action
     def run(self):

@@ -66,6 +66,11 @@ class Player(Entity):
         self.hurt_time = None
         self.invincibility_duration = 500
 
+        # Import a sound
+        self.weapon_attack_sound = pygame.mixer.Sound('../sounds/Game/Sword.wav')
+        self.weapon_attack_sound.set_volume(0.4)
+    
+
     # Input from the keyboard
     def input(self):
         if not self.attacking:        
@@ -98,6 +103,7 @@ class Player(Entity):
                 self.attacking = True
                 self.attack_time = pygame.time.get_ticks()
                 self.create_attack()
+                self.weapon_attack_sound.play()
                 
             # Magic input
             if keys[pygame.K_LCTRL]:
