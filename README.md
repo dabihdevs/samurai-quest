@@ -24,6 +24,21 @@ python main.py
 
 If the game window is full-screen, use the Windows button on your keyboard to exit from the program,then close it by right-clicking on it (on the Windows bottom bar) and hitting Close window. 
 
+## Commands
+
+* The arrow buttons on your keyboard allow your player to move across the map
+* The 'q' key allows you to change weapon
+* The 'e' key allows you to change spell
+* The 'space' key allows you to attack with a weapon
+* The 'ctrl' key allows you to cast a spell
+* the 'm' key allows you to open and close the upgrade menu
+
+In the upgrade menu you can spend your gained experience points (XPs) to increase one or more of your statistics. Use left and right arrow keys to navigate the menu and 'space' key to increase the value of the selected statistic.
+
+You have 2 weapons, a Katana and a Spear.
+
+You have 2 spells, a flame shuriken and a healing spell.
+
 ## Example
 
 [Insert pictures and animations here...]
