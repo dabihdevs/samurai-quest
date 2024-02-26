@@ -1,28 +1,49 @@
 # samurai-quest
-A simple Zelda-like RPG game created using the pygame package.
 
-At current stage the game shows:
-- A terrain map
-- collideable objects and boundaries (the player cannot leave the map or step into water)
-- a player icon which is animated during actions
-- the player is able to attack
-- the player is able to cast magic
-- the player can switch between 2 weapons (katana and lance), the selected weapon is showed in a box, which is higlighted when the weapon is changed.
-- the player can switch between 2 spells (thunder and heal), the selected weapon/spell is showed in its relative box, which is highlighted when the weapon/spell is changed.
-- health and energy bar appears on top left of the screen (with colors)
-- XPs appear on the bottom right of the screen
-- the player posesses game statistics
-- the player can inflict damages to enemies and get damaged by enemies
-- the enemies move towards the player when he enters their notice radius, and attack him when he enters their attack radius; when they attack an attack animation ensues
-- the player and the enemies flicker when hit
-- the enemy vanishes in smoke when its health goes to 0
+A basic RPG game, in which a samurai must fight his way through monsters of any kind. I build this mainly as exercise to practice python and programming in general, but also to dive in how videogames actually work.
 
-## Latest updates
-- the player can cast a healing spell (with animation) that increases the health bar by consuming energy from the energy bar
-- the energy bar slowly recovers
-- added magic shuriken interacting with sprites (and consuming energy)
-- added upgrade menu. here the player can update his/her stats by spending gained xps
-- added sound effects and music
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+- Python 3
+- pygame library
+
+I tested this game on my computer, in which Windows 10 is installed.
 
 
-I'm using the pygame package and the map-creator software Tiled. The tileset, characters and fonts I used I've taken from NinjaAdventure by Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack
+### Installing
+
+Copy all the content of this repo (included sub-repos) to your local machine, and run the main.py file using one of the many Python IDEs or simply stating in your terminal (in the root folder)
+
+```
+python main.py
+```
+
+If the game window is full-screen, use the Windows button on your keyboard to exit from the program,then close it by right-clicking on it (on the Windows bottom bar) and hitting Close window. 
+
+## Example
+
+[Insert pictures and animations here...]
+
+## Future implementations
+
+* When health points go to 0, the code now stops the program and exit it. In future I'd like to implement a game over page that gives you the possibility to start over the game
+* I'd like to implement some sort of 'boon' item: when the player collect this item, he has won
+* I'd like to change the game map, and create a new one which deals with the 'dark outsides' problem of the game
+
+## Built With
+
+* pygame - Python game library
+* Tiled - graphic app to build videogame maps using tileset
+* [NinjaAdventure Tileset](https://pixel-boy.itch.io/ninja-adventure-asset-pack) - Made by Pixel-Boy and AAA (https://www.patreon.com/pixelarchipel)
+
+## Authors
+
+* **Dabih Isidori** - [dabihdevs](https://github.com/dabihdevs)
+
+## License
+
+see the [LICENSE.md](LICENSE.md) file for details.

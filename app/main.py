@@ -29,11 +29,14 @@ class Game:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_m:
                         self.level.toggle_menu()
-                    
-            self.screen.fill('black') # display black screen
-            self.level.run() # run level
-            pygame.display.update()
-            self.clock.tick(FPS) # start clock
+
+            if self.level.game_over == True:
+                self.level.ui.game_over_screen(self.level.player)
+            else:                    
+                self.screen.fill('black') # display black screen
+                self.level.run() # run level
+                pygame.display.update()
+                self.clock.tick(FPS) # start clock
 
 # Run game
 if __name__ == '__main__':

@@ -83,3 +83,12 @@ class UI:
 
         self.weapon_overlay(player.weapon_index, not player.can_switch_weapon)
         self.magic_overlay(player.magic_index, not player.can_switch_magic)
+
+    def game_over_screen(self, player):
+        text_surf = self.font.render('GAME OVER', False, TEXT_COLOR)
+        x = player.rect[0]
+        y = player.rect[1]
+        text_rect = text_surf.get_rect(center=(x, y))
+
+        self.display_surface.blit(text_surf, text_rect)
+        

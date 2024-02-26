@@ -18,6 +18,7 @@ class Level:
         # Get the display surface
         self.display_surface = pygame.display.get_surface()
         self.game_paused = False
+        self.game_over = False
         
         # Sprite group setup
         self.visible_sprites = YSortCameraGroup()
@@ -119,6 +120,9 @@ class Level:
             self.player.vulnerable = False
             self.player.hurt_time = pygame.time.get_ticks()
             self.animation_player.create_particles(attack_type, self.player.rect.center, [self.visible_sprites])
+            if self.player.health <= 0:
+                self.endgame()
+        
 
     def trigger_death_particles(self, pos):
         self.animation_player.create_particles('smoke', pos, self.visible_sprites)
@@ -128,6 +132,9 @@ class Level:
 
     def toggle_menu(self):
         self.game_paused = not self.game_paused
+
+    def endgame(self):
+        self.game_over = True
 
     # Update and draw the game
     def run(self):
