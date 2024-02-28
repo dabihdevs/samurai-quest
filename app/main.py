@@ -31,7 +31,8 @@ class Game:
                         self.level.toggle_menu()
 
             if self.level.game_over == True:
-                self.level.ui.game_over_screen(self.level.player)
+                pygame.quit()
+                sys.exit()
             else:                    
                 self.screen.fill('black') # display black screen
                 self.level.run() # run level

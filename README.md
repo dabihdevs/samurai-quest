@@ -37,7 +37,7 @@ In the upgrade menu you can spend your gained experience points (XPs) to increas
 
 You have 2 weapons, a Katana and a Spear.
 
-You have 2 spells, a flame shuriken and a healing spell.
+You have 2 spells, a flame shuriken and a healing spell. For spells you need to have enough energy, which is shown in the blue energy bar. The energy bar slowly recovers with time.
 
 ## Example
 
