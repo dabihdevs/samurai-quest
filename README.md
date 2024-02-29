@@ -41,7 +41,7 @@ You have 2 spells, a flame shuriken and a healing spell. For spells you need to 
 
 ## Example Video
 
-<iframe  title="YouTube video player" width="480" height="390" src="https://youtu.be/xEBBMNF_De0" frameborder="0" allowfullscreen></iframe>
+[![IMAGE ALT TEXT HERE](./cover.jpg)](https://youtu.be/xEBBMNF_De0)
 
 ## Future implementations
 
