@@ -2,6 +2,8 @@
 
 A basic RPG game, in which a samurai must fight his way through monsters of any kind. I build this mainly as exercise to practice python and programming in general, but also to dive in how videogames actually work.
 
+[![IMAGE ALT TEXT HERE](./cover.jpg)](https://youtu.be/xEBBMNF_De0)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -39,9 +41,6 @@ You have 2 weapons, a Katana and a Spear.
 
 You have 2 spells, a flame shuriken and a healing spell. For spells you need to have enough energy, which is shown in the blue energy bar. The energy bar slowly recovers with time.
 
-## Example Video
-
-[![IMAGE ALT TEXT HERE](./cover.jpg)](https://youtu.be/xEBBMNF_De0)
 
 ## Future implementations
 
