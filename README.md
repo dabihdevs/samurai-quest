@@ -39,9 +39,9 @@ You have 2 weapons, a Katana and a Spear.
 
 You have 2 spells, a flame shuriken and a healing spell. For spells you need to have enough energy, which is shown in the blue energy bar. The energy bar slowly recovers with time.
 
-## Example
+## Example Video
 
-[Insert pictures and animations here...]
+<iframe  title="YouTube video player" width="480" height="390" src="https://youtu.be/xEBBMNF_De0" frameborder="0" allowfullscreen></iframe>
 
 ## Future implementations
 
